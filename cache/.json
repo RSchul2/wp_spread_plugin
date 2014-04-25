@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<productType xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://api.spreadshirt.net" weight="11.0" id="6" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/productTypes/6">
+    <name>Männer T-Shirt</name>
+    <shortDescription>Klassisch geschnittenes T-Shirt für Männer, 100% Baumwolle, Stoffdichte: 190g/m². Marke: B&amp;C</shortDescription>
+    <description>Der Standard in jedem Kleiderschrank: gerade geschnittenes T-Shirt für Männer aus vorgeschrumpfter, ringgesponnener Baumwolle. Die hohe Qualität und gute Verarbeitung zeigt sich in doppelten Nähten, an Armbündchen und Saum sowie am zweifach gelegten Kragen im 1X1 Ripp. Ein eingenähtes Nackenband garantiert komfortables Tragen. Stoffdichte: 190g/m². 100% Baumwolle.</description>
+    <categoryName>T-Shirt</categoryName>
+    <brand>B&amp;C</brand>
+    <shippingFactor>1.0</shippingFactor>
+    <sizeFitHint>fällt groß aus</sizeFitHint>
+    <discountSupported>true</discountSupported>
+    <price>
+        <vatExcluded>11.34</vatExcluded>
+        <vatIncluded>13.50</vatIncluded>
+        <vat>19.00</vat>
+        <currency id="1" xlink:href="http://api.spreadshirt.net/api/v1/currencies/1"/>
+    </price>
+    <defaultValues>
+        <defaultView id="1"/>
+        <defaultAppearance id="4"/>
+    </defaultValues>
+    <appearances>
+        <appearance id="1">
+            <name>weiß</name>
+            <colors>
+                <color index="0">#FFFFFF</color>
+            </colors>
+            <printTypes>
+                <printType id="14" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/14"/>
+                <printType id="2" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/2"/>
+                <printType id="1" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/1"/>
+                <printType id="17" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/17"/>
+                <printType id="16" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/16"/>
+                <printType id="3" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/3"/>
+                <printType id="4" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/4"/>
+            </printTypes>
+            <restrictions>
+                <useUnderlay>false</useUnderlay>
+            </restrictions>
+            <resources>
+                <resource xlink:href="http://image.spreadshirt.net/image-server/v1/appearances/1" mediaType="png"/>
+            </resources>
+        </appearance>
+        <appearance id="2">
+            <name>schwarz</name>
+            <colors>
+                <color index="0">#000000</color>
+            </colors>
+            <printTypes>
+                <printType id="14" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/14"/>
+                <printType id="2" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/2"/>
+                <printType id="17" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/17"/>
+                <printType id="16" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/16"/>
+                <printType id="3" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/3"/>
+                <printType id="4" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/4"/>
+            </printTypes>
+            <restrictions>
+                <useUnderlay>true</useUnderlay>
+            </restrictions>
+            <resources>
+                <resource xlink:href="http://image.spreadshirt.net/image-server/v1/appearances/2" mediaType="png"/>
+            </resources>
+        </appearance>
+        <appearance id="5">
+            <name>rot</name>
+            <colors>
+                <color index="0">#F51E30</color>
+            </colors>
+            <printTypes>
+                <printType id="14" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/14"/>
+                <printType id="2" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/2"/>
+                <printType id="17" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/17"/>
+                <printType id="16" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/16"/>
+                <printType id="3" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/3"/>
+                <printType id="4" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/4"/>
+            </printTypes>
+            <restrictions>
+                <useUnderlay>true</useUnderlay>
+            </restrictions>
+            <resources>
+                <resource xlink:href="http://image.spreadshirt.net/image-server/v1/appearances/5" mediaType="png"/>
+            </resources>
+        </appearance>
+        <appearance id="4">
+            <name>navy</name>
+            <colors>
+                <color index="0">#00224C</color>
+            </colors>
+            <printTypes>
+                <printType id="14" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/14"/>
+                <printType id="2" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/2"/>
+                <printType id="17" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/17"/>
+                <printType id="16" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/16"/>
+                <printType id="3" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/3"/>
+                <printType id="4" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/4"/>
+            </printTypes>
+            <restrictions>
+                <useUnderlay>true</useUnderlay>
+            </restrictions>
+            <resources>
+                <resource xlink:href="http://image.spreadshirt.net/image-server/v1/appearances/4" mediaType="png"/>
+            </resources>
+        </appearance>
+    </appearances>
+    <sizes>
+        <size id="2">
+            <name>S</name>
+            <measures>
+                <measure>
+                    <name>A</name>
+                    <value unit="mm">690</value>
+                </measure>
+                <measure>
+                    <name>B</name>
+                    <value unit="mm">520</value>
+                </measure>
+            </measures>
+        </size>
+        <size id="3">
+            <name>M</name>
+            <measures>
+                <measure>
+                    <name>A</name>
+                    <value unit="mm">715</value>
+                </measure>
+                <measure>
+                    <name>B</name>
+                    <value unit="mm">535</value>
+                </measure>
+            </measures>
+        </size>
+        <size id="4">
+            <name>L</name>
+            <measures>
+                <measure>
+                    <name>A</name>
+                    <value unit="mm">740</value>
+                </measure>
+                <measure>
+                    <name>B</name>
+                    <value unit="mm">560</value>
+                </measure>
+            </measures>
+        </size>
+        <size id="5">
+            <name>XL</name>
+            <measures>
+                <measure>
+                    <name>A</name>
+                    <value unit="mm">770</value>
+                </measure>
+                <measure>
+                    <name>B</name>
+                    <value unit="mm">580</value>
+                </measure>
+            </measures>
+        </size>
+        <size id="6">
+            <name>XXL</name>
+            <measures>
+                <measure>
+                    <name>A</name>
+                    <value unit="mm">790</value>
+                </measure>
+                <measure>
+                    <name>B</name>
+                    <value unit="mm">630</value>
+                </measure>
+            </measures>
+        </size>
+        <size id="38">
+            <name>3XL</name>
+            <measures>
+                <measure>
+                    <name>A</name>
+                    <value unit="mm">800</value>
+                </measure>
+                <measure>
+                    <name>B</name>
+                    <value unit="mm">640</value>
+                </measure>
+            </measures>
+        </size>
+    </sizes>
+    <attributes/>
+    <washingInstructions>
+        <washingInstruction id="2">
+            <logo>bleach_no.png</logo>
+            <name>bleach_no</name>
+            <description/>
+            <type>bleaching</type>
+        </washingInstruction>
+        <washingInstruction id="14">
+            <logo>iron_1.png</logo>
+            <name>iron_1</name>
+            <description/>
+            <type>ironing</type>
+        </washingInstruction>
+        <washingInstruction id="22">
+            <logo>tumble_yes.png</logo>
+            <name>tumble_yes</name>
+            <description/>
+            <type>tumble</type>
+        </washingInstruction>
+        <washingInstruction id="7">
+            <logo>dry_line.png</logo>
+            <name>dry_line</name>
+            <description/>
+            <type>drying</type>
+        </washingInstruction>
+        <washingInstruction id="27">
+            <logo>wash_40.png</logo>
+            <name>wash_40</name>
+            <description/>
+            <type>washing</type>
+        </washingInstruction>
+        <washingInstruction id="11">
+            <logo>dryclean_no.png</logo>
+            <name>dryclean_no</name>
+            <description/>
+            <type>drycleaning</type>
+        </washingInstruction>
+    </washingInstructions>
+    <views>
+        <view id="1">
+            <name>Vorne</name>
+            <size unit="mm">
+                <width>686.4864864864865</width>
+                <height>686.4864864864865</height>
+            </size>
+            <perspective>front</perspective>
+            <montage>
+                <backgroundImage>true</backgroundImage>
+            </montage>
+            <viewMaps>
+                <viewMap>
+                    <printArea id="4"/>
+                    <offset unit="mm">
+                        <x>191.236</x>
+                        <y>68.6487</y>
+                    </offset>
+                </viewMap>
+            </viewMaps>
+            <resources>
+                <resource xlink:href="http://image.spreadshirt.net/image-server/v1/productTypes/6/views/1/appearances/4" mediaType="png"/>
+            </resources>
+        </view>
+        <view id="2">
+            <name>Hinten</name>
+            <size unit="mm">
+                <width>684.5043310875841</width>
+                <height>684.5043310875841</height>
+            </size>
+            <perspective>back</perspective>
+            <montage>
+                <backgroundImage>true</backgroundImage>
+            </montage>
+            <viewMaps>
+                <viewMap>
+                    <printArea id="41"/>
+                    <offset unit="mm">
+                        <x>190.683</x>
+                        <y>53.7825</y>
+                    </offset>
+                </viewMap>
+            </viewMaps>
+            <resources>
+                <resource xlink:href="http://image.spreadshirt.net/image-server/v1/productTypes/6/views/2/appearances/4" mediaType="png"/>
+            </resources>
+        </view>
+        <view id="3">
+            <name>Rechts</name>
+            <size unit="mm">
+                <width>441.4649286157666</width>
+                <height>441.4649286157666</height>
+            </size>
+            <perspective>right</perspective>
+            <montage>
+                <backgroundImage>true</backgroundImage>
+            </montage>
+            <viewMaps>
+                <viewMap>
+                    <printArea id="420"/>
+                    <offset unit="mm">
+                        <x>121.403</x>
+                        <y>238.076</y>
+                    </offset>
+                </viewMap>
+            </viewMaps>
+            <resources>
+                <resource xlink:href="http://image.spreadshirt.net/image-server/v1/productTypes/6/views/3/appearances/4" mediaType="png"/>
+            </resources>
+        </view>
+        <view id="4">
+            <name>Links</name>
+            <size unit="mm">
+                <width>441.4649286157666</width>
+                <height>441.4649286157666</height>
+            </size>
+            <perspective>left</perspective>
+            <montage>
+                <backgroundImage>true</backgroundImage>
+            </montage>
+            <viewMaps>
+                <viewMap>
+                    <printArea id="421"/>
+                    <offset unit="mm">
+                        <x>168.703</x>
+                        <y>238.076</y>
+                    </offset>
+                </viewMap>
+            </viewMaps>
+            <resources>
+                <resource xlink:href="http://image.spreadshirt.net/image-server/v1/productTypes/6/views/4/appearances/4" mediaType="png"/>
+            </resources>
+        </view>
+    </views>
+    <printAreas>
+        <printArea id="4">
+            <appearanceColorIndex>0</appearanceColorIndex>
+            <defaultView id="1"/>
+            <restrictions>
+                <textAllowed>true</textAllowed>
+                <designAllowed>true</designAllowed>
+                <excludedPrintTypes/>
+            </restrictions>
+            <boundary>
+                <size unit="mm">
+                    <width>308.918918915</width>
+                    <height>566.351351344</height>
+                </size>
+                <hard>
+                    <content unit="mm">
+                        <svg>
+                            <rect height="566.351" width="308.919" y="0" x="0"/>
+                        </svg>
+                    </content>
+                </hard>
+                <soft/>
+            </boundary>
+        </printArea>
+        <printArea id="41">
+            <appearanceColorIndex>0</appearanceColorIndex>
+            <defaultView id="2"/>
+            <restrictions>
+                <textAllowed>true</textAllowed>
+                <designAllowed>true</designAllowed>
+                <excludedPrintTypes/>
+            </restrictions>
+            <boundary>
+                <size unit="mm">
+                    <width>312.916265632</width>
+                    <height>596.496631363</height>
+                </size>
+                <hard>
+                    <content unit="mm">
+                        <svg>
+                            <rect height="596.497" width="312.916" y="0" x="0"/>
+                        </svg>
+                    </content>
+                </hard>
+                <soft/>
+            </boundary>
+        </printArea>
+        <printArea id="420">
+            <appearanceColorIndex>0</appearanceColorIndex>
+            <defaultView id="3"/>
+            <restrictions>
+                <textAllowed>true</textAllowed>
+                <designAllowed>true</designAllowed>
+                <excludedPrintTypes>
+                    <excludedPrintType id="17" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/17"/>
+                </excludedPrintTypes>
+            </restrictions>
+            <boundary>
+                <size unit="mm">
+                    <width>149.782743614</width>
+                    <height>127.709497184</height>
+                </size>
+                <hard>
+                    <content unit="mm">
+                        <svg>
+                            <rect height="127.709" width="149.783" y="0" x="0"/>
+                        </svg>
+                    </content>
+                </hard>
+                <soft/>
+            </boundary>
+        </printArea>
+        <printArea id="421">
+            <appearanceColorIndex>0</appearanceColorIndex>
+            <defaultView id="4"/>
+            <restrictions>
+                <textAllowed>true</textAllowed>
+                <designAllowed>true</designAllowed>
+                <excludedPrintTypes>
+                    <excludedPrintType id="17" xlink:href="http://api.spreadshirt.net/api/v1/shops/500316/printTypes/17"/>
+                </excludedPrintTypes>
+            </restrictions>
+            <boundary>
+                <size unit="mm">
+                    <width>149.782743614</width>
+                    <height>127.709497184</height>
+                </size>
+                <hard>
+                    <content unit="mm">
+                        <svg>
+                            <rect height="127.709" width="149.783" y="0" x="0"/>
+                        </svg>
+                    </content>
+                </hard>
+                <soft/>
+            </boundary>
+        </printArea>
+    </printAreas>
+    <stockStates>
+        <stockState>
+            <appearance id="4"/>
+            <size id="38"/>
+            <available>true</available>
+            <quantity>269</quantity>
+        </stockState>
+        <stockState>
+            <appearance id="5"/>
+            <size id="2"/>
+            <available>true</available>
+            <quantity>228</quantity>
+        </stockState>
+        <stockState>
+            <appearance id="4"/>
+            <size id="5"/>
+            <available>true</available>
+            <quantity>1207</quantity>
+        </stockState>
+        <stockState>
+            <appearance id="2"/>
+            <size id="6"/>
+            <available>true</available>
+            <quantity>1271</quantity>
+        </stockState>
+        <stockState>
+            <appearance id="1"/>
+            <size id="4"/>
+            <available>true</available>
+            <quantity>1453</quantity>
+        </stockState>
+        <stockState>
+            <appearance id="2"/>
+            <size id="4"/>
+            <available>true</available>
+            <quantity>3413</quantity>
+        </stockState>
+        <stockState>
+            <appearance id="5"/>
+            <size id="38"/>
+            <available>true</available>
+            <quantity>243</quantity>
+        </stockState>
+        <stockState>
+            <appearance id="2"/>
+            <size id="3"/>
+            <available>true</available>
+            <quantity>2576</quantity>
+        </stockState>
+        <stockState>
+            <appearance id="5"/>
+            <size id="3"/>
+            <available>true</available>
+            <quantity>570</quantity>
+        </stockState>
+        <stockState>
+            <appearance id="5"/>
+            <size id="6"/>
+            <available>true</available>
+            <quantity>300</quantity>
+        </stockState>
+        <stockState>
+            <appearance id="1"/>
+            <size id="38"/>
+            <available>true</available>
+            <quantity>277</quantity>
+        </stockState>
+        <stockState>
+            <appearance id="1"/>
+            <size id="6"/>
+            <available>true</available>
+            <quantity>662</quantity>
+        </stockState>
+        <stockState>
+            <appearance id="1"/>
+            <size id="5"/>
+            <available>true</available>
+            <quantity>1046</quantity>
+        </stockState>
+        <stockState>
+            <appearance id="1"/>
+            <size id="2"/>
+            <available>true</available>
+            <quantity>587</quantity>
+        </stockState>
+        <stockState>
+            <appearance id="4"/>
+            <size id="6"/>
+            <available>true</available>
+            <quantity>501</quantity>
+        </stockState>
+        <stockState>
+            <appearance id="1"/>
+            <size id="3"/>
+            <available>true</available>
+            <quantity>1342</quantity>
+        </stockState>
+        <stockState>
+            <appearance id="4"/>
+            <size id="3"/>
+            <available>true</available>
+            <quantity>1700</quantity>
+        </stockState>
+        <stockState>
+            <appearance id="2"/>
+            <size id="38"/>
+            <available>true</available>
+            <quantity>765</quantity>
+        </stockState>
+        <stockState>
+            <appearance id="4"/>
+            <size id="2"/>
+            <available>true</available>
+            <quantity>1347</quantity>
+        </stockState>
+        <stockState>
+            <appearance id="4"/>
+            <size id="4"/>
+            <available>true</available>
+            <quantity>1533</quantity>
+        </stockState>
+        <stockState>
+            <appearance id="5"/>
+            <size id="5"/>
+            <available>true</available>
+            <quantity>412</quantity>
+        </stockState>
+        <stockState>
+            <appearance id="2"/>
+            <size id="5"/>
+            <available>true</available>
+            <quantity>2629</quantity>
+        </stockState>
+        <stockState>
+            <appearance id="5"/>
+            <size id="4"/>
+            <available>true</available>
+            <quantity>639</quantity>
+        </stockState>
+        <stockState>
+            <appearance id="2"/>
+            <size id="2"/>
+            <available>true</available>
+            <quantity>1084</quantity>
+        </stockState>
+    </stockStates>
+    <resources>
+        <resource xlink:href="http://image.spreadshirt.net/image-server/v1/productTypes/6/views/1/appearances/4" type="preview" mediaType="png"/>
+        <resource xlink:href="http://image.spreadshirt.net/image-server/v1/productTypes/6/variants/size" type="size" mediaType="png"/>
+        <resource xlink:href="http://image.spreadshirt.net/image-server/v1/productTypes/6/variants/detail" type="detail" mediaType="png"/>
+    </resources>
+    <created>2004-07-20T09:03:13Z</created>
+    <modified>2014-03-04T14:01:25Z</modified>
+</productType>
