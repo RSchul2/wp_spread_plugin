@@ -59,14 +59,14 @@ function get_producttype_list($currentpage)
 {
 $limit=get_option('spreadshop_items_per_page');
 $offset=($currentpage-1)*$limit;
-$targetURL='http://api.spreadshirt.net/api/v1/shops/500316/productTypes?locale=de_DE&fullData=true&limit='.$limit.'&offset='.$offset.'#0';
+$targetURL='http://api.spreadshirt.net/api/v1/shops/'.get_option('spreadshop_shop_id').'/productTypes?locale=de_DE&fullData=true&limit='.$limit.'&offset='.$offset.'#0';
 $data= new SimpleXMLElement(get_data($targetURL)) ;
 return $data;
 }
 
 function get_producttype_list_by_department($assortment_department_id)
 {
-$targetURL='http://api.spreadshirt.net/api/v1/shops/500316/productTypeDepartments/'.$assortment_department_id.'?locale=de_DE&fullData=true#0';
+$targetURL='http://api.spreadshirt.net/api/v1/shops/'.get_option('spreadshop_shop_id').'/productTypeDepartments/'.$assortment_department_id.'?locale=de_DE&fullData=true#0';
 echo $targetURL;
 $data= new SimpleXMLElement(get_data($targetURL)) ;
 return $data;
@@ -74,7 +74,7 @@ return $data;
 
 function get_department_data($departmentID)
 {
-$targetURL='http://api.spreadshirt.net/api/v1/shops/500316/productTypeDepartments/'.$departmentID.'?locale=de_DE&fullData=true#0';
+$targetURL='http://api.spreadshirt.net/api/v1/shops/'.get_option('spreadshop_shop_id').'/productTypeDepartments/'.$departmentID.'?locale=de_DE&fullData=true#0';
 $data= new SimpleXMLElement(get_data($targetURL)) ;
 
 return $data;
@@ -82,21 +82,21 @@ return $data;
 
 function get_department_list()
 {
-$targetURL='http://api.spreadshirt.net/api/v1/shops/500316/productTypeDepartments?locale=de_DE&fullData=true#0';
+$targetURL='http://api.spreadshirt.net/api/v1/shops/'.get_option('spreadshop_shop_id').'/productTypeDepartments?locale=de_DE&fullData=true#0';
 $data= new SimpleXMLElement(get_data($targetURL)) ;
 return $data;
 }
 
 function get_producttype_data($producttype_id)
 {
-$targetURL='http://api.spreadshirt.net/api/v1/shops/500316/productTypes/'.$producttype_id.'?locale=de_DE&fullData=true';
+$targetURL='http://api.spreadshirt.net/api/v1/shops/'.get_option('spreadshop_shop_id').'/productTypes/'.$producttype_id.'?locale=de_DE&fullData=true';
 $data= new SimpleXMLElement(get_data($targetURL)) ;
 return $data;
 }
 
 function get_product_data($product_id)
 {
-$targetURL='http://api.spreadshirt.net/api/v1/shops/500316/product/'.$product_id.'?locale=de_DE&fullData=true#0';
+$targetURL='http://api.spreadshirt.net/api/v1/shops/'.get_option('spreadshop_shop_id').'/product/'.$product_id.'?locale=de_DE&fullData=true#0';
 $data= new SimpleXMLElement(get_data($targetURL)) ;
 return $data;
 
@@ -105,7 +105,7 @@ return $data;
 function get_article_list_data()
 {
 $limit=get_option('spreadshop_items_per_page');
-$targetURL='http://api.spreadshirt.net/api/v1/shops/500316/articles?locale=de_DE&fullData=true&limit='.$limit.'&offset=0#0';
+$targetURL='http://api.spreadshirt.net/api/v1/shops/'.get_option('spreadshop_shop_id').'/articles?locale=de_DE&fullData=true&limit='.$limit.'&offset=0#0';
 $data= new SimpleXMLElement(get_data($targetURL)) ;
 return $data;
 }
@@ -114,14 +114,14 @@ return $data;
 
 function get_article_data($article_id)
 {
-$targetURL='http://api.spreadshirt.net/api/v1/shops/500316/articles/'.$article_id.'?locale=de_DE&fullData=true&limit=100&offset=0#0';
+$targetURL='http://api.spreadshirt.net/api/v1/shops/'.get_option('spreadshop_shop_id').'/articles/'.$article_id.'?locale=de_DE&fullData=true&limit=100&offset=0#0';
 $data= new SimpleXMLElement(get_data($targetURL)) ;
 return $data;
 }
 
 function get_article_navi_data()
 {
-$targetURL='http://api.spreadshirt.net/api/v1/shops/500316//articles?locale=de_DE&fullData=true#0';
+$targetURL='http://api.spreadshirt.net/api/v1/shops/'.get_option('spreadshop_shop_id').'//articles?locale=de_DE&fullData=true#0';
 $data= new SimpleXMLElement(get_data($targetURL)) ;
 return $data;
 }

@@ -1,5 +1,6 @@
 
 <?php
+
 include('datahandler.php');
 include('basket.php');
 // store get parameters to define content to be displayed

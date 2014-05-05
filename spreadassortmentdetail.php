@@ -1,21 +1,13 @@
-
-<form id="test">
-<input  type="button" id="addtobasket" />
-<input id="shopID" value="500316" />
-</form>
-
-<form id="test2">
-<input  type="button" id="viewbasket" name="viewbasket"/>
-<input id="shopID" value="500316" />
-</form>
-
+<script>
+var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>"
+</script>
 <?php
 include('datahandler.php');
-include('basket.php');
+//include('basket.php');
 
-if (isset($_GET['produktid']))
+if (isset($_GET['producttypeid']))
 	{
-	$producttype_id=$_GET['produktid'];
+	$producttype_id=$_GET['producttypeid'];
 	$producttype =  get_producttype_data($producttype_id);
 	$arr_params = array( "producttype" => (string)$producttype_id,"name" => (string)$producttype->name);
 	$permalink = get_permalink( get_option('spreadshop_designer_page') );
@@ -56,5 +48,19 @@ foreach ($producttype->sizes->size as $size)
 	echo '</ul>';			
 	}
 echo '</ul></div>';
+
+echo '<form id="add_producttype_to_basket" class="article" action="">';
+echo   '<select name="size" ';
+foreach ($producttype->sizes->size as $size)
+	{
+	echo '<option class="size" value="'.$size->attributes()->id.'">'.$size->name.'</option>';
+		}
+    echo '</select>';
+	echo '<input name="producttypeID" value="'.$producttype->attributes()->id.'"></input>';
+	echo '<input name="appearanceID" value="'.$producttype->appearance->attributes()->id.'"></input>';
+    echo '<input  type="submit" id="add_producttype_to_basket"/>';
+	echo '</form>';
+
+
 }
 ?>

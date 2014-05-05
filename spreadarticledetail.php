@@ -1,6 +1,10 @@
+<script>
+var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>"
+</script>
 <?php
 include('datahandler.php');
-include('basket.php');
+//include('basket.php');
+echo '<div id="basket"></div>';
 if (isset($_GET['articleid']))
 	{
 	$article_id=$_GET['articleid'];
@@ -31,16 +35,20 @@ foreach ($producttype->appearances->appearance as $appearance)
 	echo '<li><div id="'.$appearance->attributes()->id.'">'.$appearance->colors->color.'</div></li>';
 	}
 echo '</ul></div>';
-echo '<div>';
-echo '<input value="'.$article->attributes()->id.'">'.$article->attributes()->id.'</input>';	
-echo   '<select name="sizes" size="3">';
+
+echo '<form id="'.$article->attributes()->id.'" class="article" action="">';
+	
+	
+	echo   '<select name="size" ';
 foreach ($producttype->sizes->size as $size)
 	{
-	echo '<option class="size" sizeID="'.$size->attributes()->id.'">'.$size->name.'</option>';
+	echo '<option class="size" value="'.$size->attributes()->id.'">'.$size->name.'</option>';
 		}
-echo '</select>';
-echo '<input  type="submit" class="addtobasket"/>';
-echo '</div>';
-echo '</form>';
+    echo '</select>';
+	echo '<input name="articleID" value="'.$article->attributes()->id.'"></input>';
+	echo '<input name="appearanceID" value="'.$article->product->appearance->attributes()->id.'"></input>';
+    echo '<input  type="submit" class="addtobasket"/>';
+	echo '</form>';
+echo '<div>';
 }
 ?>

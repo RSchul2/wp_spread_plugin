@@ -24,8 +24,12 @@ add_shortcode( 'spreadshop_imprint', 'spreadshop_imprint' );
 add_action( 'admin_init', 'register_mysettings' );
 add_filter( 'wp_nav_menu_args', 'modify_nav_menu_args' );
 add_action( 'wp_enqueue_scripts', 'register_plugin_styles' );
-
-
+add_action( 'wp_ajax_add_to_basket', 'add_to_basket' );
+add_action( 'wp_ajax_nopriv_add_to_basket', 'add_to_basket' );
+add_action( 'wp_ajax_get_basket', 'get_basket' );
+add_action( 'wp_ajax_nopriv_get_basket', 'get_basket' );
+add_action( 'wp_ajax_add_producttype_to_basket', 'add_producttype_to_basket' );
+add_action( 'wp_ajax_nopriv_add_producttype_to_basket', 'add_producttype_to_basket' );
 
 
 //function to exclude specific pages from showing up in the navigation
@@ -290,6 +294,172 @@ function register_plugin_styles() {
 	wp_enqueue_script( 'spreadshop_script' );
 }
 
-// function to set basket_cookie
+// function to get basket data and hand it over to client
+
+function get_basket()
+		{
+		include("authheaders.php");
+		$basketURL=$_COOKIE["basket"];
+		$header[] = createSprdAuthHeader("Get", $basketURL);
+		$header[] = "Content-Type: application/xml";
+		$ch = curl_init($basketURL);
+		curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_HEADER, false);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+		$result = curl_exec($ch);
+		$result=new SimpleXMLElement($result);
+		echo $result->asXML();
+		curl_close($ch);
+		die();
+		}
+		
+function add_to_basket()
+		{
+		parse_str($_POST['data'], $article_data);
+		include("authheaders.php");
+		if (isset($_COOKIE["basket"]))
+		{
+		$basketURL=$_COOKIE["basket"];
+		}
+		else
+		{$basketURL=create_Basket();
+		}
+		
+		$basketItemsURL = $basketURL . "/items";
+			$basketItem = new SimpleXmlElement('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+					<basketItem xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://api.spreadshirt.net">
+					<quantity>1</quantity>
+					<element id="'.$article_data["articleID"].'" type="sprd:article" xlink:href="http://api.spreadshirt.de/api/v1/shops/'.get_option('spreadshop_shop_id').'/articles/'.$article_data["articleID"].'">
+					<properties>
+					<property key="appearance">'.$article_data["appearanceID"].'</property>
+					<property key="size">'.$article_data["size"].'</property>
+					</properties>
+					</element>
+					<links>
+					<link type="edit" xlink:href="http://'.get_option('spreadshop_shop_id').'.spreadshirt.de/-A26620609"/>
+					<link type="continueShopping" xlink:href="http://'.get_option('spreadshop_shop_id').'.spreadshirt.de"/>
+					</links>
+					</basketItem>');
+					$header = array();
+	$header[] = createSprdAuthHeader("POST", $basketItemsURL);
+	$header[] = "Content-Type: application/xml";
+	$ch = curl_init($basketItemsURL);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $basketItem->asXML());
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HEADER, true);
+	$result = curl_exec($ch);
+	curl_close($ch);
+	echo $basketURL;		
+	die();
+	}
+		
+function create_Basket()
+{
+$basketURL="http://api.spreadshirt.net/api/v1/baskets";
+$basket = new SimpleXmlElement('<basket xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://api.spreadshirt.net">
+					<shop id="'.get_option('spreadshop_api_key').'"/>
+					</basket>');
+$header = array();
+$header[] = createSprdAuthHeader("POST", "http://api.spreadshirt.net/api/v1/baskets/items");
+$header[] = "Content-Type: application/xml";
+
+    $ch = curl_init($basketURL);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $basket->asXML());
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HEADER, true);
+    $result = parseHttpHeaders(curl_exec($ch),"Location");
+	curl_close($ch);
+	return $result;
+
+}		
+
+function add_producttype_to_basket()
+{
+
+$productID=create_product();
+
+		if (isset($_COOKIE["basket"]))
+		{
+		$basketURL=$_COOKIE["basket"];
+		}
+		else
+		{$basketURL=create_Basket();
+		}
+		echo $basketURL;
+		$basketItemsURL = $basketURL . "/items";
+			$basketItem = new SimpleXmlElement('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+					<basketItem xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://api.spreadshirt.net">
+					<quantity>1</quantity>
+					<element id="'.$productID.'" type="sprd:product" xlink:href="http://api.spreadshirt.de/api/v1/shops/'.get_option('spreadshop_shop_id').'/products/'.$productID.'">
+					<properties>
+					<property key="appearance">1</property>
+					<property key="size">2</property>
+					</properties>
+					</element>
+					<links>
+					<link type="edit" xlink:href="http://'.get_option('spreadshop_shop_id').'.spreadshirt.de/-A26620609"/>
+					<link type="continueShopping" xlink:href="http://'.get_option('spreadshop_shop_id').'.spreadshirt.de"/>
+					</links>
+					</basketItem>');
+					$header = array();
+	$header[] = createSprdAuthHeader("POST", $basketItemsURL);
+	$header[] = "Content-Type: application/xml";
+	$ch = curl_init($basketItemsURL);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $basketItem->asXML());
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HEADER, true);
+	$result = curl_exec($ch);
+	curl_close($ch);
+//	return $basketURL;		
+	die();
+}
+
+
+
+// function to create a product using the spreadshirt api. retunrs url to created product
+//To Do: remove hardcoded producttype data
+function create_product()
+{
+include("authheaders.php");
+$createProductURL='http://api.spreadshirt.net/api/v1/shops/'.get_option('spreadshop_shop_id').'/products';
+$productData = new SimpleXmlElement('<product xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://api.spreadshirt.net">
+<productType id="6"/>
+<appearance id="1"/>
+<size id="12"/>
+<restrictions>
+<freeColorSelection>false</freeColorSelection>
+<example>false</example>
+</restrictions>
+</product>');
+	$header = array();
+	$header[] = createSprdAuthHeader("POST", $createProductURL);
+	$header[] = "Content-Type: application/xml";
+	$ch = curl_init($createProductURL);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $productData->asXML());
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HEADER, true);
+	$result = parseHttpHeaders(curl_exec($ch),"Location");
+	curl_close($ch);
+	$result = explode('products/', $result);
+	return $result[1];		
+	die();
+	}
+
 
 ?>
+
+
+
